@@ -24,12 +24,17 @@ for(i in 1:100) {
 print(number)
 
 # 5번 : 2~1000 사이의 소수를 출력 / 자신의 제곱근 아래로 나누어 떨어 지는 것이 없으면 소수이다
-for(i in 4:10) {
+count <- 0
+for(i in 2:1000) {
   for(j in 2:sqrt(i)) {
-    if(i%%j != 0) {
-      print(i)
+    if(i%%j == 0) {
+      count <- count +1
     }
   }
+  if( i==2 | count==0 ) {
+    print(i)
+  }
+  count <- 0
 }
 
 # 6번 : 0항~40항 피보나치 수열 출력
@@ -46,6 +51,21 @@ fibo <- function(n){
 for(i in 1:40) {
   print(fibo(i))
 }
+
+# 9번 : 최대공약수 함수 만들기
+lgm <- function(x,y) {
+  for(i in 1:x) {
+    if(x%%i ==0 & y%%i ==0) {
+      lgmNumber <- i
+    }
+  }
+  print(lgmNumber)
+}
+lgm(4,8)
+
+
+
+
 
 
   
